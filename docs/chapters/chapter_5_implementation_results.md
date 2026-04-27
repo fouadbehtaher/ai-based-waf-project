@@ -1,6 +1,6 @@
-# Chapter 4: Implementation and Results
+# Chapter 5: Implementation and Results
 
-## 4.1 Implementation overview
+## 5.1 Implementation overview
 
 The implemented system contains the following major parts:
 
@@ -12,7 +12,7 @@ The implemented system contains the following major parts:
 - audit logging for privileged actions
 - scripts for export, training, evaluation, benchmarking, and migration
 
-## 4.2 Backend implementation
+## 5.2 Backend implementation
 
 The backend handles:
 
@@ -34,7 +34,7 @@ The API also supports:
 - runtime settings changes
 - user management and audit review
 
-## 4.3 Frontend implementation
+## 5.3 Frontend implementation
 
 The React command center provides:
 
@@ -48,7 +48,7 @@ The React command center provides:
 
 This elevates the project beyond a notebook or single Flask demo and gives it an actual control plane.
 
-## 4.4 Deployment implementation
+## 5.4 Deployment implementation
 
 Two validated deployment paths are now included:
 
@@ -64,9 +64,11 @@ The Docker stack was verified live on this machine with the following working pa
 - `http://127.0.0.1:8081/api/auth/login`
 - `http://127.0.0.1:8081/proxy/api/hello?name=prod`
 
-## 4.5 Detection results on labeled telemetry
+## 5.5 Detection results on labeled telemetry
 
 Results generated in [academic_results.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/academic_results.json):
+
+**Table 5.1. Detection results on labeled telemetry**
 
 | Pipeline | Precision | Recall | F1 | ROC-AUC | FPR | TP | FP | TN | FN |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -80,7 +82,9 @@ Interpretation:
 - the ML model improves recall relative to itself, but introduces false positives
 - the hybrid pipeline does not improve over rules-only on this small dataset because the rule layer already captures all positives
 
-## 4.6 Results on prepared public dataset
+## 5.6 Results on prepared public dataset
+
+**Table 5.2. Detection results on prepared public data**
 
 | Pipeline | Precision | Recall | F1 | ROC-AUC | FPR | TP | FP | TN | FN |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -94,9 +98,11 @@ Interpretation:
 - the current anomaly artifact does not generalize well to this prepared public sample
 - this validates the need for better data volume, broader benign traffic, and better threshold tuning
 
-## 4.7 Runtime benchmark results
+## 5.7 Runtime benchmark results
 
 ### Proxy end-to-end benchmark
+
+**Table 5.3. Runtime benchmark results**
 
 | Environment | Avg latency ms | P50 latency ms | P95 latency ms | Throughput rps | Requests | Concurrency |
 |---|---:|---:|---:|---:|---:|---:|
@@ -112,7 +118,7 @@ Interpretation:
 
 These measurements are honest local workstation numbers rather than idealized targets. They show the system is functional, but they also show that more performance optimization is still needed to satisfy the original latency ambition.
 
-## 4.8 Stress evidence for adaptive blocking
+## 5.8 Stress evidence for adaptive blocking
 
 The stress evidence file [rate_limit_stress.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/rate_limit_stress.json) recorded:
 
@@ -122,7 +128,7 @@ The stress evidence file [rate_limit_stress.json](C:/Users/tamat/OneDrive/Deskto
 
 This demonstrates that the runtime protection layer actively enforces rate-based defensive decisions under higher load.
 
-## 4.9 Operational evidence
+## 5.9 Operational evidence
 
 Automated verification succeeded:
 
@@ -130,7 +136,9 @@ Automated verification succeeded:
 - the Docker health snapshot confirms PostgreSQL and Redis mode in [health_docker.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/health_docker.json)
 - the local health snapshot confirms SQLite and storage-backed rate limiting in [health_local.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/health_local.json)
 
-## 4.10 Assessment against success criteria
+## 5.10 Assessment against success criteria
+
+**Table 5.4. Assessment against success criteria**
 
 | Criterion | Target | Observed status |
 |---|---|---|
@@ -141,7 +149,7 @@ Automated verification succeeded:
 | Average added latency | < 50 ms | Not achieved in current local and Docker measurements |
 | P95 latency | < 150 ms | Not achieved in current local and Docker measurements |
 
-## 4.11 Result summary
+## 5.11 Result summary
 
 The implementation goals were achieved: the project now works as a full WAF research prototype with administration, persistence, deployment assets, and evaluation artifacts. The research results are mixed but useful:
 

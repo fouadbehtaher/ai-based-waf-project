@@ -10,7 +10,8 @@ If you still need a blank template for another project cycle, keep the original 
 
 1. Introduction
 2. Literature Review
-3. Methodology and Design
-4. Implementation and Results
-5. Discussion, Limitations, and Future Work
-6. Appendices
+3. Requirements and Analysis
+4. Methodology and Design
+5. Implementation and Results
+6. Discussion, Limitations, and Future Work
+7. Appendices

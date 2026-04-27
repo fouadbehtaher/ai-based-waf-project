@@ -18,6 +18,8 @@ flowchart LR
     API --> Audit[(Audit and Admin Data)]
 ```
 
+*Figure 4.1. High-level component view.*
+
 ## Request processing sequence
 
 ```mermaid
@@ -47,6 +49,8 @@ sequenceDiagram
     end
 ```
 
+*Figure 4.2. Request processing sequence.*
+
 ## Control-plane and analyst workflow
 
 ```mermaid
@@ -66,6 +70,8 @@ flowchart LR
     Users --> API
 ```
 
+*Figure 4.3. Control-plane and analyst workflow.*
+
 ## ML and data lifecycle
 
 ```mermaid
@@ -81,6 +87,8 @@ flowchart TD
     Registry --> Runtime[Hybrid Runtime Scoring]
 ```
 
+*Figure 4.4. ML and data lifecycle.*
+
 ## Deployment topology
 
 ```mermaid
@@ -91,6 +99,8 @@ flowchart TB
     Flask --> Postgres[(PostgreSQL)]
     Flask --> Redis[(Redis)]
 ```
+
+*Figure 4.5. Deployment topology.*
 
 ## Security decisions
 

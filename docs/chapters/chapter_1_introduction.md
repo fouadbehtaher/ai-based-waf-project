@@ -82,8 +82,9 @@ Out of scope:
 ## 1.9 Report organization
 
 - Chapter 2 reviews the literature and motivates a hybrid WAF design.
-- Chapter 3 describes the methodology, datasets, threat model, and evaluation process.
-- Chapter 4 presents the implementation and the measured results.
-- Chapter 5 interprets the findings, limitations, and future work.
+- Chapter 3 formalizes the implemented system through requirements, analysis tables, diagrams, and validation structure.
+- Chapter 4 describes the methodology, datasets, threat model, and evaluation process.
+- Chapter 5 presents the implementation and the measured results.
+- Chapter 6 interprets the findings, limitations, and future work.
 
 References: [references.md](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/docs/references.md)

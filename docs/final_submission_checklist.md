@@ -6,7 +6,7 @@
 - `docs/literature_review.md` included.
 - `docs/system_architecture.md` included.
 - `docs/final_report.md` included.
-- `docs/chapters/` includes Chapter 1-5 plus appendices.
+- `docs/chapters/` includes Chapter 1-6 plus appendices.
 - `docs/presentation_deck.md` included.
 - `docs/references.md` included.
 - `scripts/generate_academic_results.py` included.

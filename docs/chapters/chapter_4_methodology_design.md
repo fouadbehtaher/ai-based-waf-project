@@ -1,6 +1,6 @@
-# Chapter 3: Methodology and Design
+# Chapter 4: Methodology and Design
 
-## 3.1 Research methodology
+## 4.1 Research methodology
 
 The project follows a design-and-evaluate methodology:
 
@@ -12,7 +12,7 @@ The project follows a design-and-evaluate methodology:
 6. train and evaluate a lightweight anomaly model
 7. benchmark runtime performance and operational responses
 
-## 3.2 Threat model
+## 4.2 Threat model
 
 ### In scope
 
@@ -38,7 +38,7 @@ The project follows a design-and-evaluate methodology:
 - enterprise TLS edge hardening
 - malware delivery after successful application compromise
 
-## 3.3 System design
+## 4.3 System design
 
 The final architecture is described in [system_architecture.md](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/docs/system_architecture.md). At runtime, the request path is:
 
@@ -52,7 +52,7 @@ The final architecture is described in [system_architecture.md](C:/Users/tamat/O
 8. optionally forward to the protected backend
 9. store telemetry and expose it to the dashboard
 
-## 3.4 Data strategy
+## 4.4 Data strategy
 
 The project uses two datasets:
 
@@ -61,12 +61,14 @@ The project uses two datasets:
 
 Generated dataset summary from [academic_results.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/academic_results.json):
 
+**Table 4.1. Dataset summary used by the current evaluation workflow**
+
 | Dataset | Rows | Engineered feature columns | Label distribution |
 |---|---:|---:|---|
 | `labeled_requests.csv` | 14 | 28 | 7 malicious / 7 benign |
 | `public_dataset_prepared.csv` | 14 | 30 | 7 malicious / 7 benign |
 
-## 3.5 Feature engineering
+## 4.5 Feature engineering
 
 The project extracts a mix of payload, protocol, and behavioral features, including:
 
@@ -83,7 +85,7 @@ The project extracts a mix of payload, protocol, and behavioral features, includ
 
 This feature set is intentionally explainable. It supports both deterministic rules and anomaly scoring while remaining understandable to reviewers and analysts.
 
-## 3.6 Model choice
+## 4.6 Model choice
 
 The runtime pipeline is hybrid:
 
@@ -98,7 +100,7 @@ Isolation Forest was selected because:
 - it works naturally with anomaly scoring
 - it fits a research prototype that may begin with limited labels
 
-## 3.7 Baselines and evaluation plan
+## 4.7 Baselines and evaluation plan
 
 Three decision strategies are evaluated:
 
@@ -118,7 +120,7 @@ Metrics:
 - P95 latency
 - throughput
 
-## 3.8 Experimental environments
+## 4.8 Experimental environments
 
 Two runtime environments are part of the evaluation:
 
@@ -132,7 +134,7 @@ Health evidence for both modes is available in:
 - [health_local.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/health_local.json)
 - [health_docker.json](C:/Users/tamat/OneDrive/Desktop/wafai/waf_project/reports/health_docker.json)
 
-## 3.9 Ethics and privacy
+## 4.9 Ethics and privacy
 
 The project stores IP addresses and short payload previews, which creates privacy obligations. The implemented safeguards are:
 
@@ -142,7 +144,7 @@ The project stores IP addresses and short payload previews, which creates privac
 - documented export flow for research use
 - explicit acknowledgement that IP addresses can be personal data
 
-## 3.10 Reproducibility
+## 4.10 Reproducibility
 
 The methodology is reproducible through:
 

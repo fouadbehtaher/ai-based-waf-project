@@ -1,6 +1,6 @@
-# Chapter 5: Discussion and Conclusion
+# Chapter 6: Discussion and Conclusion
 
-## 5.1 Discussion of findings
+## 6.1 Discussion of findings
 
 The project demonstrates that a complete WAF research prototype can be built around a hybrid design, but the measured outcomes also show that implementation completeness is not the same as model maturity.
 
@@ -19,7 +19,7 @@ The most important research result is that the current rule engine outperforms t
 
 This is exactly the kind of finding that an academic report should state clearly.
 
-## 5.2 Why the hybrid pipeline did not yet beat rules-only
+## 6.2 Why the hybrid pipeline did not yet beat rules-only
 
 Three reasons explain the result:
 
@@ -29,7 +29,7 @@ Three reasons explain the result:
 
 As a result, the rule layer already captures all positives, and the ML layer adds mostly extra false positives rather than extra useful recall.
 
-## 5.3 Engineering strengths of the final system
+## 6.3 Engineering strengths of the final system
 
 Even though the model still needs refinement, the system now has substantial engineering value:
 
@@ -43,7 +43,7 @@ Even though the model still needs refinement, the system now has substantial eng
 
 These strengths make the project suitable for demonstration, grading, and future extension.
 
-## 5.4 Limitations
+## 6.4 Limitations
 
 The main limitations are:
 
@@ -53,7 +53,7 @@ The main limitations are:
 - measured latency is higher than the original success target
 - screenshots and polished visual reporting can still be expanded further if required for a final printed submission
 
-## 5.5 Recommendations for future work
+## 6.5 Recommendations for future work
 
 The next technical upgrades should be:
 
@@ -65,7 +65,7 @@ The next technical upgrades should be:
 - integrate Redis for more benchmark scenarios and multi-instance tests
 - add CI/CD and secrets management for stronger production hardening
 
-## 5.6 Final conclusion
+## 6.6 Final conclusion
 
 This project successfully evolved from a simple demo into a research-grade WAF prototype with:
 
